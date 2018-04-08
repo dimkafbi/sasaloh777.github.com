@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Отправка форм AJAX</title>
+</head>
+<body>
+	<form method="POST">
+		<input type="text" id="name">
+		<input type="text" id="log">
+		<input type="submit" id="sub">
+	</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+	<script src="common.js"></script>
+</body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <script>
+  	$(document).ready(function() {
+
+	$("#sub").click(function() {
+		$.ajax({
+			type: "POST",
+			url: "mail.php",
+			dataType: 'html',
+			data: {n: $('#name').val(),l:$('#log').val()}
+		})
+	})
+});
+		
+	
+
+  </script>
